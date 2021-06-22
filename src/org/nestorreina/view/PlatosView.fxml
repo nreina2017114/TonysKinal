@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="786.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.nestorreina.controller.PlatosController">
+   <children>
+      <ImageView fitHeight="518.0" fitWidth="792.0" layoutX="-2.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/FondoPlatos.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="Platos" layoutX="356.0" layoutY="11.0" prefHeight="62.0" prefWidth="129.0" text="Platos" textAlignment="CENTER" textFill="#fffafa">
+         <effect>
+            <DropShadow color="#0d0909" height="65.47" radius="34.46" spread="0.15" width="74.37" />
+         </effect>
+         <font>
+            <Font name="Britannic Bold" size="42.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="62.0" fitWidth="69.0" layoutX="719.0" onMouseClicked="#ventanaTipoPlato" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/iconoRegresar.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="74.0" layoutY="81.0" prefHeight="31.0" prefWidth="90.0" text="Código Plato:" textFill="WHITE">
+         <effect>
+            <DropShadow color="#e7e3ff" height="65.5" radius="34.125" spread="0.72" width="73.0" />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="423.0" layoutY="84.0" prefHeight="31.0" prefWidth="63.0" text="Cantidad:" textFill="WHITE">
+         <effect>
+            <DropShadow color="#e7e3ff" height="65.5" radius="34.125" spread="0.72" width="73.0" />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="137.0" prefHeight="31.0" prefWidth="96.0" text="Nombre Plato:" textFill="WHITE">
+         <effect>
+            <DropShadow color="#e7e3ff" height="65.5" radius="34.125" spread="0.72" width="73.0" />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="397.0" layoutY="136.0" prefHeight="31.0" prefWidth="117.0" text="Descripción Plato:" textFill="WHITE">
+         <effect>
+            <DropShadow color="#e7e3ff" height="65.5" radius="34.125" spread="0.72" width="73.0" />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="76.0" layoutY="195.0" prefHeight="31.0" prefWidth="81.0" text="Precio Plato:" textFill="WHITE">
+         <effect>
+            <DropShadow color="#e7e3ff" height="65.5" radius="34.125" spread="0.72" width="73.0" />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="390.0" layoutY="195.0" prefHeight="31.0" prefWidth="117.0" text="Código Tipo Plato:" textFill="WHITE">
+         <effect>
+            <DropShadow color="#e7e3ff" height="65.5" radius="34.125" spread="0.72" width="73.0" />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCodigoPlato" editable="false" layoutX="161.0" layoutY="83.0" prefHeight="31.0" prefWidth="225.0">
+         <effect>
+            <InnerShadow choke="0.16" color="RED" height="35.0" radius="20.75" width="50.0" />
+         </effect>
+      </TextField>
+      <TextField fx:id="txtCantidad" editable="false" layoutX="512.0" layoutY="84.0" prefHeight="31.0" prefWidth="238.0">
+         <effect>
+            <InnerShadow choke="0.16" color="RED" height="35.0" radius="20.75" width="50.0" />
+         </effect>
+      </TextField>
+      <TextField fx:id="txtNombrePlato" editable="false" layoutX="160.0" layoutY="139.0" prefHeight="31.0" prefWidth="225.0">
+         <effect>
+            <InnerShadow choke="0.16" color="RED" height="35.0" radius="20.75" width="50.0" />
+         </effect>
+      </TextField>
+      <TextField fx:id="txtPrecioPlato" editable="false" layoutX="160.0" layoutY="194.0" prefHeight="31.0" prefWidth="225.0">
+         <effect>
+            <InnerShadow choke="0.16" color="RED" height="35.0" radius="20.75" width="50.0" />
+         </effect>
+      </TextField>
+      <TextField fx:id="txtDescripcionPlato" editable="false" layoutX="513.0" layoutY="138.0" prefHeight="31.0" prefWidth="238.0">
+         <effect>
+            <InnerShadow choke="0.16" color="RED" height="35.0" radius="20.75" width="50.0" />
+         </effect>
+      </TextField>
+      <TableView fx:id="tblPlatos" layoutX="22.0" layoutY="244.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="200.0" prefWidth="743.0" stylesheets="@../resource/DarkTheme.css">
+        <columns>
+          <TableColumn fx:id="colCodigoPlato" prefWidth="88.0" text="Código Plato" />
+          <TableColumn fx:id="colCantidad" prefWidth="81.0" text="Cantidad" />
+            <TableColumn fx:id="colNombrePlato" prefWidth="163.0" text="Nombre Plato" />
+            <TableColumn fx:id="colDescripcionPlato" prefWidth="198.0" text="Descripción Plato" />
+            <TableColumn fx:id="colPrecioPlato" prefWidth="101.0" text="Precio Plato" />
+            <TableColumn fx:id="colCodigoTipoPlato" prefWidth="111.0" text="Código Tipo Plato" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnNuevo" layoutX="78.0" layoutY="453.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #D8D8D8;" text="Nuevo" />
+      <Button fx:id="btnEliminar" layoutX="270.0" layoutY="453.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #D8D8D8;" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="453.0" layoutY="453.0" mnemonicParsing="false" onAction="#editar" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #D8D8D8;" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="621.0" layoutY="453.0" mnemonicParsing="false" onAction="#generarReporte" onMouseClicked="#cancelar" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #D8D8D8;" text="Reporte" />
+      <ComboBox fx:id="cmbCodigoTipoPlato" disable="true" layoutX="514.0" layoutY="193.0" prefHeight="31.0" prefWidth="238.0">
+         <effect>
+            <InnerShadow color="RED" />
+         </effect>
+      </ComboBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteServicios" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b9e8cb91-7013-4d75-b672-1228ef36e284">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codTipoPlato" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[call sp_ListarReporte2 ($P{codTipoPlato})]]>
+	</queryString>
+	<field name="codigoTipoPlato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionTipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoPlato" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrePlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcionPlato" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precioPlato" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoProducto" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreProducto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoServicio" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaServicio" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipoServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaServicio" class="java.sql.Time">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="lugarServicio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoEmpresa" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="118" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="4" width="752" height="114" uuid="63d0005a-2f11-4b92-b3a7-30232ca9c235"/>
+				<imageExpression><![CDATA["C:\\Users\\aleja\\Documents\\NetBeans Proyects\\TonysKinal2017114\\src\\org\\nestorreina\\image\\ReporteEncabezadoArriba.png"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement stretchType="RelativeToBandHeight" x="18" y="15" width="123" height="95" uuid="9cd4004c-8e55-422a-9816-129ffdf01032"/>
+				<imageExpression><![CDATA["C:\\Users\\aleja\\Documents\\NetBeans Proyects\\TonysKinal2017114\\src\\org\\nestorreina\\image\\iconoGeneral.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="396" y="66" width="156" height="44" forecolor="#FF9900" uuid="c44a56c5-010f-42f7-a1ea-59f026f3adc6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Curlz MT" size="30"/>
+				</textElement>
+				<text><![CDATA[Tony´s Kinal]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="52" splitType="Stretch">
+			<rectangle>
+				<reportElement x="227" y="4" width="295" height="42" forecolor="#000000" backcolor="#000000" uuid="4fcfa78c-bdf3-4ebc-b45d-1a241a125207"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="752" height="51" forecolor="#FFFFFF" uuid="4cfa927a-2acd-41e5-af18-3798a2542850"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Elephant" size="26"/>
+				</textElement>
+				<text><![CDATA[Reporte De Servicios]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="50" width="752" height="1" forecolor="#FF0000" uuid="63af7ccd-a588-43b5-ad86-26b0628da938"/>
+				<graphicElement>
+					<pen lineWidth="3.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="2" width="163" height="33" forecolor="#FFFFFF" backcolor="#666666" uuid="72b51db7-a922-4d5c-9358-51ddf4673db1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Black" size="14"/>
+				</textElement>
+				<text><![CDATA[Código Servicio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="163" y="2" width="184" height="33" forecolor="#FFFFFF" backcolor="#666666" uuid="ebbe88a1-284a-4d66-b35a-81222dafd6e8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Black" size="14"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="335" y="2" width="243" height="33" forecolor="#FFFFFF" backcolor="#666666" uuid="87ec2c75-ca8e-4eef-ab9b-dac4785d6ac7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Black" size="14"/>
+				</textElement>
+				<text><![CDATA[Descripción Tipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="567" y="2" width="185" height="33" forecolor="#FFFFFF" backcolor="#666666" uuid="fcdb9f1b-e489-40c9-88c2-75e469af4735"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bodoni MT Black" size="14"/>
+				</textElement>
+				<text><![CDATA[Nombre del Producto]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="27" y="7" width="100" height="20" uuid="f4bffa64-e8b7-4610-b6c1-f235a26febd2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{codigoServicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="203" y="7" width="100" height="20" uuid="93aecc4d-0ea8-4582-bbf1-9952d3fc0590"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="406" y="7" width="100" height="20" uuid="ffec8c7f-6d5f-4325-a2e8-e628d751de87"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{descripcionTipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="616" y="7" width="100" height="20" uuid="1f56f561-1ab4-40b0-9c61-a15a212b4c97"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombreProducto}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="36" width="752" height="1" forecolor="#000000" uuid="2b58075a-14d5-475a-a3a0-fc7af170feb4"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="-1" width="1" height="39" uuid="3de7b15d-1b6c-4c59-be36-8f48df1881c6"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="174" y="0" width="1" height="38" uuid="3c31ef28-e9a5-4dc2-aec1-e8e30654bb02"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="358" y="0" width="1" height="38" uuid="17a0bef2-412b-4fa3-9608-224e0e8a2a78"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="554" y="0" width="1" height="38" uuid="6f9adb89-317f-4ddd-bc0a-85050a220902"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="751" y="0" width="1" height="38" uuid="e1ccdd07-4a4d-4c30-a2dc-11a5c505792f"/>
+				<graphicElement>
+					<pen lineWidth="1.0"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="35" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="83" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="752" height="83" uuid="5393c6fc-b0b2-442a-926d-0b642deb5bd9"/>
+				<imageExpression><![CDATA["C:\\Users\\aleja\\Documents\\NetBeans Proyects\\TonysKinal2017114\\src\\org\\nestorreina\\image\\ReporteEncabezadoAbajo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="69" y="3" width="356" height="31" forecolor="#FF9900" uuid="e5eee712-b5bb-4214-86dc-ac2a56e11b30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Curlz MT" size="18"/>
+				</textElement>
+				<text><![CDATA["No dejes para mañana lo que puedes hacer hoy"]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

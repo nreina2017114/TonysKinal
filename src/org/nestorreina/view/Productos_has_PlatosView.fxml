@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.nestorreina.controller.ProductoshasPlatosController">
+   <children>
+      <ImageView fitHeight="441.0" fitWidth="826.0" layoutX="-6.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/FondoProductoshasPlatos.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="Productos_has_Platos" layoutX="235.0" layoutY="10.0" prefHeight="46.0" prefWidth="317.0" text="Productos_has_Platos" textAlignment="CENTER" textFill="#fffafa">
+         <effect>
+            <DropShadow color="#0d0909" height="65.47" radius="34.46" spread="0.15" width="74.37" />
+         </effect>
+         <font>
+            <Font name="Britannic Bold" size="32.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="58.0" fitWidth="64.0" layoutX="750.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/iconoRegresar.jpg" />
+         </image>
+      </ImageView>
+      <Separator layoutX="1.0" layoutY="57.0" prefHeight="2.0" prefWidth="813.0" />
+      <TableView fx:id="tblProductos_has_Platos" layoutX="367.0" layoutY="101.0" prefHeight="219.0" prefWidth="433.0" stylesheets="@../resource/DarkTheme.css">
+        <columns>
+          <TableColumn fx:id="colProductos_codigoProducto" prefWidth="184.0" text="Productos_códigoProducto" />
+          <TableColumn fx:id="colCodigoPlato" prefWidth="123.0" text="Código Plato" />
+            <TableColumn fx:id="colCodigoProducto" prefWidth="125.0" text="Código Producto" />
+        </columns>
+         <effect>
+            <InnerShadow choke="0.5" color="WHITE" height="31.0" radius="17.25" width="40.0" />
+         </effect>
+      </TableView>
+      <Button fx:id="btnEliminar" layoutX="401.0" layoutY="352.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="40.0" prefWidth="102.0" style="-fx-background-color: #D8D8D8;" text="Eliminar" />
+      <GridPane layoutX="14.0" layoutY="73.0" prefHeight="319.0" prefWidth="329.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="txtProductos_codigoProducto" editable="false" prefHeight="31.0" prefWidth="331.0" GridPane.rowIndex="1">
+               <effect>
+                  <InnerShadow color="#53e2fb" height="35.0" radius="20.75" width="50.0" />
+               </effect>
+            </TextField>
+            <ComboBox fx:id="cmbCodigoPlato" prefHeight="31.0" prefWidth="331.0" GridPane.rowIndex="3">
+               <effect>
+                  <InnerShadow choke="0.28" color="#53e2fb" radius="18.895" width="56.58" />
+               </effect>
+            </ComboBox>
+            <ComboBox fx:id="cmbCodigoProducto" prefHeight="31.0" prefWidth="331.0" GridPane.rowIndex="5">
+               <effect>
+                  <InnerShadow choke="0.19" color="#53e2fb" radius="15.932499999999997" width="44.73" />
+               </effect>
+            </ComboBox>
+            <Label prefHeight="31.0" prefWidth="200.0" text="Código Plato:" textFill="#fffefe" GridPane.rowIndex="2">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#efedff" height="65.5" radius="34.125" spread="0.72" width="73.0" />
+               </effect>
+            </Label>
+            <Label prefHeight="31.0" prefWidth="200.0" text="Código Producto:" textFill="#fffefe" GridPane.rowIndex="4">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#efedff" height="65.5" radius="34.125" spread="0.72" width="73.0" />
+               </effect>
+            </Label>
+            <Label prefHeight="31.0" prefWidth="200.0" text="Productos_códigoProducto:" textFill="#fffefe">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <DropShadow color="#efedff" height="65.5" radius="34.125" spread="0.72" width="73.0" />
+               </effect>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

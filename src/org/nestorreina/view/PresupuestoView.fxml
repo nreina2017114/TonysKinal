@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.nestorreina.controller.PresupuestoController">
+   <children>
+      <ImageView fitHeight="582.0" fitWidth="658.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/FondoPresupuesto.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="Presupuesto" layoutX="228.0" layoutY="4.0" prefHeight="53.0" prefWidth="217.0" text="Presupuesto" textAlignment="CENTER" textFill="#fffafa">
+         <effect>
+            <DropShadow color="#0d0909" height="65.47" radius="34.46" spread="0.15" width="74.37" />
+         </effect>
+         <font>
+            <Font name="Britannic Bold" size="39.0" />
+         </font>
+      </Label>
+      <Separator layoutY="63.0" prefHeight="3.0" prefWidth="651.0" />
+      <ImageView fitHeight="69.0" fitWidth="89.0" layoutX="457.0" onMouseClicked="#ventanaEmpresas" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/iconoGeneral.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="19.0" layoutY="96.0" prefHeight="31.0" prefWidth="154.0" text="Código Presupuesto:">
+         <effect>
+            <DropShadow color="#00b4ff" height="58.0" radius="32.25" spread="0.72" width="73.0" />
+         </effect>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="37.0" layoutY="149.0" prefHeight="31.0" prefWidth="110.0" text="Fecha Solicitud:">
+         <effect>
+            <DropShadow color="#00b4ff" height="58.0" radius="32.25" spread="0.72" width="73.0" />
+         </effect>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="9.0" layoutY="201.0" prefHeight="31.0" prefWidth="162.0" text="Cantidad Presupuesto:">
+         <effect>
+            <DropShadow color="#00b4ff" height="58.0" radius="32.25" spread="0.72" width="73.0" />
+         </effect>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="36.0" layoutY="251.0" prefHeight="31.0" prefWidth="124.0" text="Código Empresa:">
+         <effect>
+            <DropShadow color="#00b4ff" height="58.0" radius="32.25" spread="0.72" width="73.0" />
+         </effect>
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblPresupuesto" layoutX="9.0" layoutY="316.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="181.0" prefWidth="637.0" stylesheets="@../resource/DarkTheme.css">
+         <columns>
+            <TableColumn fx:id="colCodigoPresupuesto" prefWidth="156.0" text="Código Presupuesto" />
+            <TableColumn fx:id="colFechaSolicitud" prefWidth="194.0" text="Fecha Solicitud" />
+            <TableColumn fx:id="colCantidadPresupuesto" prefWidth="155.0" text="Cantidad Presupuesto" />
+            <TableColumn fx:id="colCodigoEmpresa" prefWidth="131.0" text="CódigoEmpresa" />
+         </columns>
+      </TableView>
+      <Button fx:id="btnNuevo" layoutX="70.0" layoutY="514.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #BDBDBD;" text="Nuevo" />
+      <Button fx:id="btnEliminar" layoutX="216.0" layoutY="514.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #BDBDBD;" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="361.0" layoutY="514.0" mnemonicParsing="false" onAction="#editar" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #BDBDBD;" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="503.0" layoutY="514.0" mnemonicParsing="false" onAction="#generarReporte" onMouseClicked="#cancelar" prefHeight="40.0" prefWidth="80.0" style="-fx-background-color: #BDBDBD;" text="Reporte" />
+      <TextField fx:id="txtCodigoPresupuesto" editable="false" layoutX="177.0" layoutY="98.0" prefHeight="31.0" prefWidth="448.0">
+         <effect>
+            <InnerShadow color="#09a6ae" height="35.0" radius="20.75" width="50.0" />
+         </effect>
+      </TextField>
+      <TextField fx:id="txtCantidadPresupuesto" editable="false" layoutX="176.0" layoutY="203.0" prefHeight="31.0" prefWidth="448.0">
+         <effect>
+            <InnerShadow color="#09a6ae" height="35.0" radius="20.75" width="50.0" />
+         </effect>
+      </TextField>
+      <ComboBox fx:id="cmbCodigoEmpresa" disable="true" layoutX="174.0" layoutY="251.0" prefHeight="31.0" prefWidth="299.0">
+         <effect>
+            <InnerShadow choke="0.48" height="32.86" radius="19.6375" width="47.69" />
+         </effect>
+      </ComboBox>
+      <GridPane fx:id="grpFechaSolicitd" disable="true" layoutX="177.0" layoutY="152.0" prefHeight="31.0" prefWidth="289.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="21.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="6.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <rotationAxis>
+            <Point3D x="1.0" y="1.0" z="1.0" />
+         </rotationAxis>
+      </GridPane>
+      <Text layoutX="472.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Empresa">
+         <font>
+            <Font name="Bell MT" size="17.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

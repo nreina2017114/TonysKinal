@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.nestorreina.controller.ServiciosController">
+   <children>
+      <ImageView fitHeight="644.0" fitWidth="912.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/FondoServicios.jpg" />
+         </image>
+      </ImageView>
+      <Separator layoutY="62.0" prefHeight="0.0" prefWidth="912.0" />
+      <TableView fx:id="tblServicios" layoutX="20.0" layoutY="346.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="200.0" prefWidth="875.0" stylesheets="@../resource/DarkTheme.css">
+        <columns>
+          <TableColumn fx:id="colCodigoServicio" prefWidth="101.0" text="Código Servicio" />
+          <TableColumn fx:id="colFechaServicio" minWidth="8.0" prefWidth="120.0" text="Fecha Servicio" />
+            <TableColumn fx:id="colTipoServicio" prefWidth="112.0" text="Tipo Servicio" />
+            <TableColumn fx:id="colHoraServicio" prefWidth="94.0" text="Hora Servicio" />
+            <TableColumn fx:id="colLugarServicio" prefWidth="218.0" text="Lugar Servicio" />
+            <TableColumn fx:id="colTelefonoContacto" prefWidth="117.0" text="Teléfono Contacto" />
+            <TableColumn fx:id="colCodigoEmpresa" prefWidth="112.0" text="Código Empresa" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnNuevo" layoutX="48.0" layoutY="578.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="44.0" prefWidth="101.0" style="-fx-background-color: #D8D8D8;" text="Nuevo" />
+      <Button fx:id="btnEliminar" layoutX="191.0" layoutY="578.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="44.0" prefWidth="101.0" style="-fx-background-color: #D8D8D8;" text="Eliminar" />
+      <Button fx:id="btnEditar" layoutX="340.0" layoutY="578.0" mnemonicParsing="false" onAction="#editar" prefHeight="44.0" prefWidth="101.0" style="-fx-background-color: #D8D8D8;" text="Editar" />
+      <Button fx:id="btnReporte" layoutX="476.0" layoutY="578.0" mnemonicParsing="false" onAction="#generarReporte" onMouseClicked="#cancelar" prefHeight="44.0" prefWidth="101.0" style="-fx-background-color: #D8D8D8;" text="Reporte" />
+      <Pane layoutX="-1.0" prefHeight="62.0" prefWidth="912.0" style="-fx-background-color: CEF6F5;">
+         <children>
+            <Label fx:id="Servicios" layoutX="373.0" layoutY="-1.0" prefHeight="65.0" prefWidth="199.0" text="Servicios" textAlignment="CENTER" textFill="#fffafa">
+               <effect>
+                  <DropShadow color="#0d0909" height="65.47" radius="34.46" spread="0.15" width="74.37" />
+               </effect>
+               <font>
+                  <Font name="Britannic Bold" size="46.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="65.0" fitWidth="89.0" layoutX="823.0" onMouseClicked="#ventanaEmpresas" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/iconoGeneral.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Text fill="WHITE" layoutX="836.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Empresa">
+         <font>
+            <Font name="Bell MT" size="18.0" />
+         </font>
+      </Text>
+      <GridPane layoutX="19.0" layoutY="75.0" prefHeight="243.0" prefWidth="875.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="1.0" prefWidth="149.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="353.0" minWidth="10.0" prefWidth="296.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="135.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="277.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="44.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="55.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="31.0" prefWidth="133.0" text="Código Servicio:" textFill="WHITE">
+               <effect>
+                  <DropShadow color="#efedff" height="72.07" radius="35.7675" spread="0.72" width="73.0" />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCodigoServicio" editable="false" prefHeight="31.0" prefWidth="293.0" GridPane.columnIndex="1">
+               <effect>
+                  <InnerShadow color="#ffa50b" height="35.0" radius="20.75" width="50.0" />
+               </effect>
+            </TextField>
+            <Label prefHeight="31.0" prefWidth="121.0" text="Fecha Servicio:" textFill="WHITE" GridPane.rowIndex="1">
+               <effect>
+                  <DropShadow color="#efedff" height="72.07" radius="35.7675" spread="0.72" width="73.0" />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label prefHeight="31.0" prefWidth="107.0" text="Tipo Servicio:" textFill="WHITE" GridPane.rowIndex="2">
+               <effect>
+                  <DropShadow color="#efedff" height="72.07" radius="35.7675" spread="0.72" width="73.0" />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtTipoServicio" editable="false" prefHeight="31.0" prefWidth="743.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <effect>
+                  <InnerShadow color="#ffa50b" height="35.0" radius="20.75" width="50.0" />
+               </effect>
+            </TextField>
+            <Label prefHeight="31.0" prefWidth="113.0" text="Hora Servicio:" textFill="WHITE" GridPane.rowIndex="3">
+               <effect>
+                  <DropShadow color="#efedff" height="72.07" radius="35.7675" spread="0.72" width="73.0" />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtHoraServicio" editable="false" prefHeight="31.0" prefWidth="293.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <effect>
+                  <InnerShadow color="#ffa50b" height="35.0" radius="20.75" width="50.0" />
+               </effect>
+            </TextField>
+            <Label prefHeight="31.0" prefWidth="121.0" text="Lugar Servicio:" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <effect>
+                  <DropShadow color="#efedff" height="72.07" radius="35.7675" spread="0.72" width="73.0" />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtLugarServicio" editable="false" prefHeight="31.0" prefWidth="299.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <effect>
+                  <InnerShadow color="#ffa50b" height="35.0" radius="20.75" width="50.0" />
+               </effect>
+            </TextField>
+            <Label prefHeight="31.0" prefWidth="141.0" text="Código Empresa:" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <effect>
+                  <DropShadow color="#efedff" height="72.07" radius="35.7675" spread="0.72" width="73.0" />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cmbCodigoEmpresa" disable="true" prefHeight="31.0" prefWidth="299.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <effect>
+                  <InnerShadow choke="0.35" color="#1ab4d7" radius="14.4475" width="38.79" />
+               </effect>
+            </ComboBox>
+            <Label prefHeight="31.0" prefWidth="151.0" text="Teléfono Contacto:" textFill="WHITE" GridPane.rowIndex="4">
+               <effect>
+                  <DropShadow color="#efedffe5" height="72.07" radius="35.7675" spread="0.72" width="73.0" />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtTelefonoContacto" editable="false" prefHeight="31.0" prefWidth="273.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <effect>
+                  <InnerShadow color="#ffa50b" height="35.0" radius="20.75" width="50.0" />
+               </effect>
+            </TextField>
+         </children>
+      </GridPane>
+      <GridPane fx:id="grpFechaServicio" disable="true" layoutX="173.0" layoutY="136.0" prefHeight="42.0" prefWidth="301.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+   </children>
+</AnchorPane>

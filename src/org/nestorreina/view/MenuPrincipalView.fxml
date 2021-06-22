@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="367.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.nestorreina.controller.MenuPrincipalController">
+   <children>
+      <ImageView fitHeight="371.0" fitWidth="554.0" layoutX="-78.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/FondoPrincipal.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </ImageView>
+      <MenuBar layoutX="-2.0" layoutY="-2.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Modulos">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaEmpresas" text="Empresas" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTipoEmpleado" text="Tipo Empleado" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaTipoPlato" text="Tipo Plato" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProductos" text="Producto" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Entidades De Unión">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaServicioshasPlatos" text="Servicios_has_Platos" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaServicioshasEmpleados" text="Servicios_has_Empleados" />
+                  <MenuItem mnemonicParsing="false" onAction="#ventanaProductoshasPlatos" text="Productos_has_Platos" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="?">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#ventanaProgramador" text="About" />
+            </items>
+          </Menu>
+        </menus>
+         <effect>
+            <InnerShadow color="#000000de" height="33.22" radius="15.77" width="31.86" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="CROSSHAIR" />
+         </cursor>
+      </MenuBar>
+   </children>
+</AnchorPane>
